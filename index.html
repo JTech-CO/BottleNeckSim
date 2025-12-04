@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_BOTTLENECK_SIM_V3.0_MODULAR</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Three.js & OrbitControls (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Main Script (Module) -->
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <!-- (기존 HTML body 내용과 동일, 생략 없이 그대로 사용하세요) -->
+    <div id="menubar">
+        <div class="menu-item">FILE</div>
+        <div class="menu-item">SIMULATION</div>
+        <div class="menu-item">VIEW</div>
+        <div class="menu-item">HELP</div>
+    </div>
+    
+    <!-- ... (나머지 HTML 요소들) ... -->
+    <div id="workspace">
+        <div id="canvas-container">
+            <div id="bottleneck-indicator">WARNING: CPU BOTTLENECK</div>
+            <div class="viewport-label" style="top: 10px; left: 10px;">AXIS: ORBIT</div>
+            <div class="viewport-label" style="bottom: 10px; left: 10px;">MOUSE: ROTATE / SCROLL: ZOOM</div>
+        </div>
+        <div id="sidebar">
+            <!-- 기존 사이드바 내용 -->
+             <div class="sidebar-title">SYSTEM PARAMETERS</div>
+             <!-- ... input 요소들 (ID는 기존과 동일하게 유지) ... -->
+             <!-- VIEW SETTINGS -->
+            <div class="panel-section">
+                <span class="panel-header">VIEW SETTINGS</span>
+                <div class="input-group" style="display:block;">
+                    <label>PIPE OPACITY</label>
+                    <input type="range" id="opacity-slider" min="0" max="100" value="40">
+                </div>
+            </div>
+            <!-- CPU, GPU, SIMULATION inputs... -->
+            <div class="panel-section">
+                <span class="panel-header">SIMULATION</span>
+                 <!-- ... -->
+                <button id="btn-update">UPDATE MODEL</button>
+            </div>
+            <div id="status-display"></div>
+        </div>
+    </div>
+    <div id="statusbar">
+        <div>CMD: MODULAR_SYSTEM_READY</div>
+        <div id="fps-counter">FPS: 60</div>
+        <div>MEM: OK</div>
+    </div>
+</body>
+</html>
