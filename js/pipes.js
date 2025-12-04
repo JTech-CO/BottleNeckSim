@@ -6,7 +6,6 @@ const pipeGroup = new THREE.Group();
 scene.add(pipeGroup);
 
 export function buildPipes(cRad, gRad) {
-    // 기존 메쉬 삭제
     while(pipeGroup.children.length > 0){ 
         const obj = pipeGroup.children[0];
         if(obj.geometry) obj.geometry.dispose();
@@ -16,7 +15,7 @@ export function buildPipes(cRad, gRad) {
     const segs = 48;
     const inputR = CONFIG.INPUT_RADIUS;
     
-    // Geometry 생성 Helper
+    // Geometry Helper
     const createPart = (rTop, rBot, height, transX, rotZ_PI_div) => {
         const geo = new THREE.CylinderGeometry(rTop, rBot, height, segs, 1, true);
         if(rotZ_PI_div) geo.rotateZ(Math.PI / rotZ_PI_div);
@@ -38,4 +37,5 @@ export function buildPipes(cRad, gRad) {
     createPart(cRad, gRad, 20, 20, -2);
     // 5. GPU
     createPart(gRad, gRad, 50, 55, 2);
+
 }
