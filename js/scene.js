@@ -39,7 +39,7 @@ const backLight = new THREE.DirectionalLight(0x445566, 0.5);
 backLight.position.set(-50, -50, -100);
 scene.add(backLight);
 
-// 리사이즈 핸들러
+// Resize Handler
 window.addEventListener('resize', () => {
     aspect = container.clientWidth / container.clientHeight;
     camera.left = -CONFIG.VIEW_SIZE * aspect;
@@ -48,4 +48,5 @@ window.addEventListener('resize', () => {
     camera.bottom = -CONFIG.VIEW_SIZE;
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
+
 });
